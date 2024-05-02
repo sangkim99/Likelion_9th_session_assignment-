@@ -1,0 +1,10 @@
+<h1>edit profile 페이지</h1>
+
+<form method="POST" action="{% url 'update_profile' old_profile.id %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name = "nickname" value="{{edit_profile.nickname}}" />
+    <input type= "file" name= "image" />
+    <input type="submit" value="수정하기" />
+</form>
+
+<a href="{% url 'home' %}">홈</a>
